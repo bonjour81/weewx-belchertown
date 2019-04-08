@@ -11,7 +11,6 @@ Features include:
 * Responsive design. Mobile and iPad landscape ready! Use your mobile phone or iPad in landscape mode as an additional live console display.
 * Progressive webapp ready enabling the "Add to homescreen" option so your website feels like an app on your mobile devices. 
 
-![BelchertownWeather.com Homepage](https://raw.githubusercontent.com/poblabs/weewx-belchertown/master/assets/homepage_screenshot.jpg)
 
 ## Table of Contents
 
