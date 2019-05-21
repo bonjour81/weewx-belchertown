@@ -1628,14 +1628,11 @@ p.entry-meta {
 	transform: rotate(315deg);
 }
 
-.wx-rainrate-value {
-	padding-left:5px;
-}
-
 .small-almanac {
 	/* padding-top:5px; */
 	border-top:1px solid #D7D7D7;
-    padding:15px;
+    /* padding:15px; */
+    padding: 0px 15px 0px;
     margin: 0 -15px 0 -15px;
 }
 
@@ -1652,6 +1649,42 @@ p.entry-meta {
 	font-size:25px;
 	text-align:left;
 	padding-bottom: 10px;
+}
+
+.sun-moon-modal {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.page .sun-moon-modal a {
+    text-decoration:none;
+}
+
+.modal-lg {
+    /* width: 900px !important; */
+    /* margin: 30px auto; */
+}
+
+.light .label {
+    color: #333 !important;
+}
+
+.celestial_body { 
+    display:inline-block;
+}
+
+table.celestial td.label { 
+    min-width: 140px !important;
+    display: inline-block;
+    text-align:left;
+    font-size:initial;
+}
+
+/* Scroll issue in dark mode https://stackoverflow.com/a/54196631/1177153 */
+.modal {
+    overflow-y: auto !important;
 }
 
 .moon-container {
@@ -1749,6 +1782,7 @@ p.entry-meta {
     margin:0 auto;
     text-align:center;
     margin-top:20px;
+    line-height: 40px;
 }
 
 .wx-buttons-description {
