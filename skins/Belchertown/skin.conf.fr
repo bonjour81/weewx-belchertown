@@ -5,22 +5,24 @@
 ###############################################################################
  
 [Extras]
+
     # General Site Defaults
     belchertown_debug = 0
     belchertown_root_url = ""
     belchertown_locale = "auto"
     theme = light
     theme_toggle_enabled = 1
-    site_title = ""
+    site_title = "Mon site météo"
     logo_image = ""
     radar_html = ""
-    # Station Observations. Special observation rainWithRainRate combines Daily Rain with 
-    # Rain Rate in 1 line
-    station_observations = "barometer", "dewpoint", "outHumidity", "rainWithRainRate", "UV"
+
+    # Station Observations. Special observation rainWithRainRate combines Daily Rain with Rain Rate in 1 line
+    station_observations = "barometer", "dewpoint", "outHumidity", "rainWithRainRate"
     
     # Manifest Settings for Mobile Phones
-    manifest_name = ""
-    manifest_short_name = "Météo"
+    manifest_name = "Mon site météo"
+    manifest_short_name = "MSM"
+
     # Highcharts settings
     highcharts_enabled = 1
     graph_page_show_all_button = 1
@@ -39,12 +41,10 @@
     mqtt_websockets_topic = ""
     disconnect_live_website_visitor = 1800000
     
-    # If mqtt_websockets_enabled is set to 0, but want the page to full reload on an 
-    # interval, specify this below in milliseconds. 300000 = 5 minutes
+    # If mqtt_websockets_enabled is set to 0, but want the page to full reload on an interval, specify this below in milliseconds. 300000 = 5 minutes
     webpage_autorefresh = 0
     
-    # Enable reloading of images in the index hook pages. Useful if there's webcams in 
-    # these sections.
+    # Enable reloading of images in the index hook pages. Useful if there's webcams in these sections.
     reload_hook_images = 0
     
     # Forecast defaults
@@ -64,348 +64,369 @@
     facebook_enabled = 0
     twitter_enabled = 0
 
-    # Google Analytics googleAnalyticsId = UA-12345678-1 This is the display of the Pi 
-    # Kiosk which is in the /pi folder
+    # Google Analytics
+    #googleAnalyticsId = UA-12345678-1
+
+    # This is the display of the Pi Kiosk which is in the /pi folder
     pi_kiosk_bold = "false"
 
 ###############################################################################
+
 [Labels]
     # Labels used in this skin
     
     [[Generic]]
-        # Generic labels, keyed by an observation type. To change a label or translate it 
-        # to your language change the text after the equal sign. Extra Observation labels
-        appTemp = Température ressentie
-        cloudbase = Base nuages
-        visibility = Visibilité
-        windrun = Course du vent
+        # Generic labels, keyed by an observation type.
+        # To change a label or translate it to your language 
+        # change the text after the equal sign.
+
+        # Extra Observation labels
+        appTemp              = Température ressentie
+        cloudbase            = Base nuages
+        visibility           = Visibilité
+        windrun              = Vent
         
-        # HTML Header Meta Tags and HTML Title. These labels have a default value set 
-        # inside of header.html.tmpl. Leave as "" to use the default value.
-        html_title = ""
-        html_description = ""
+        # HTML Header Meta Tags and HTML Title. These labels have a default value
+        # set inside of header.html.tmpl. Leave as "" to use the default value.
+        html_title         = "Conditions météo"
+        html_description   = "Conditions météo observées par une station météo personnelle et le logiciel weewx"
         
         # Footer Information
-        footer_copyright_text = "mon site météo"
+        footer_copyright_text = "Mon site météo"
         footer_disclaimer_text = "N'utilisez pas ce site web pour prendre des décisions importantes"
         
-        # Twitter Social Share        
+        # Twitter Social Share
         twitter_text = ""
         twitter_owner = ""
         twitter_hashtags = ""
         
         # Station Observation Table
-        rainWithRainRate = Précipitations
+        rainWithRainRate     = Précipitations
         
         # Navigation Menu
-        nav_home = Page d'accueil
-        nav_graphs = Graphiques
-        nav_records = Records
-        nav_reports = Historique
-        nav_about = À propos de...
+        nav_home        = Page d'accueil
+        nav_graphs      = Graphiques
+        nav_records     = Records
+        nav_reports     = Historique
+        nav_about       = À propos de...
         
         # Default page headers
-        home_page_header = "Conditions actuelles"
-        graphs_page_header = "Observations graphiques"
-        records_page_header = "Table des records"
-        reports_page_header = "Rapports"
-        about_page_header = "Ma station météo"
-        powered_by = "Powered by <a href="www.weewx.org" target="_blank">WeeWX</a>"
+        home_page_header        = "Conditions actuelles"
+        graphs_page_header      = "Observations graphiques"
+        records_page_header     = "Table des records"
+        reports_page_header     = "Rapports"
+        about_page_header       = "Ma station météo"
+        powered_by              = "Powered by <a href="www.weewx.org" target="_blank">WeeWX</a>"
         
         # DarkSky translations
-        alert_in_effect = en cours jusqu'à
-        forecast_last_updated = Mise à jour le
-        clear = Clair
-        darksky_rain = Pluie
-        snow = Neige
-        sleet = Grésil
-        windy = Vent
-        fog = Brume
-        overcast = Couvert
-        partly_cloudy = Nuages épars
-        hail = Grêle
-        thunderstorm = Orage
-        tornado = Tornade
+        alert_in_effect             = en cours jusqu'à
+        forecast_last_updated       = Mise à jour le
+        clear                       = Clair
+        darksky_rain                = Pluie
+        snow                        = Neige
+        sleet                       = Grésil
+        windy                       = Vent
+        fog                         = Brume
+        overcast                    = Couvert
+        partly_cloudy               = Nuages épars
+        hail                        = Grêle
+        thunderstorm                = Orage
+        tornado                     = Tornade
         # Earthquake translations
         earthquake_no_data = Pas de données récentes sur les tremblements de terre
         
         # Home Page Text and Titles
-        sun = Soleil
-        moon = Lune
-        sun_and_moon = Soleil & Lune
-        moon_visible = Visible
-        daily_forecast = Prévisions
-        wind_speed = Vent
-        wind_gust = Rafale
-        feels_like = ressenti
-        highest_temperature = Max
-        lowest_temperature = Min
-        forecast_header = Prévisions à 8 jours
-        header_last_updated = Mise à jour le
-        mqtt_websockets_connecting = Connexion aux données temps réel de la station
-        mqtt_websockets_waiting = Connecté. Attente données.
-        mqtt_websockets_connected = Connecté à la station, données reçues
-        mqtt_websockets_stopped = Reception de données arretée
-        mqtt_websockets_continue = Continue mise à jour des données en temps réel
-        mqtt_websockets_failed = Echec connection à la station meteo. Essayez plus tard!
-        mqtt_websockets_lost = Connexion à la station météo perdue. Essayez plus tard!
-        weather_snapshots = Mini/Maxi du jour et du mois.
-        weather_snapshots_link = Voir tous...
-        snapshot_high = Haut
-        snapshot_low = Bas
-        snapshot_today_high_wind = Vent max
-        snapshot_today_high_uv = UV max
-        snapshot_today_rain = Précipitations
-        snapshot_today_rainrate = Taux de pluie
-        snapshot_month_high_wind = Vent max (mois)
-        snapshot_month_high_uv = UV max (mois)
-        snapshot_month_rain = Précipitations (mois)
-        snapshot_month_rainrate = Taux de pluie max (mois)
-        earthquake_title = Tremblement de terre récent
-        earthquake_magnitude = Magnitude
-        homepage_graphs_link = Voir tous les graphiques...
-        copyright = Copyright
+        sun                         = Soleil
+        moon                        = Lune
+        sun_and_moon                = Soleil & Lune
+        moon_visible                = Visible
+        daily_forecast              = Prévisions
+        wind_speed                  = Vent
+        wind_gust                   = Rafale
+        feels_like                  = ressenti
+        highest_temperature         = Max
+        lowest_temperature          = Min
+        forecast_header             = Prévisions à 8 jours
+        header_last_updated         = Mise à jour le
+        mqtt_websockets_connecting  = Connexion aux données temps réel de la station
+        mqtt_websockets_waiting     = Connecté. Attente données.
+        mqtt_websockets_connected   = Connecté à la station, données reçues
+        mqtt_websockets_stopped     = Reception de données arretée
+        mqtt_websockets_continue    = Continue mise à jour des données en temps réel
+        mqtt_websockets_failed      = Echec connection à la station meteo. Essayez plus tard!
+        mqtt_websockets_lost        = Connexion à la station météo perdue. Essayez plus tard!
+        weather_snapshots           = Mini/Maxi du jour et du mois.
+        weather_snapshots_link      = Voir tous...
+        snapshot_high               = Haut
+        snapshot_low                = Bas
+        snapshot_today_high_wind    = Vent max
+        snapshot_today_high_uv      = UV max
+        snapshot_today_rain         = Précipitations
+        snapshot_today_rainrate     = Taux de pluie
+        snapshot_month_high_wind    = Vent max (mois)
+        snapshot_month_high_uv      = UV max (mois)
+        snapshot_month_rain         = Précipitations (mois)
+        snapshot_month_rainrate     = Taux de pluie max (mois)
+        earthquake_title            = Tremblement de terre récent
+        earthquake_magnitude        = Magnitude
+        homepage_graphs_link        = Voir tous les graphiques...
+        copyright                   = Copyright
         
         # Almanac Popup
-        close = Fermer
-        almanac_more_details = Plus de détails
-        almanac_modal_title = Information Almanach
-        sun_always_down = Always down
-        sun_always_up = Always up
-        more_than_yesterday = Plus qu'hier
-        less_than_yesterday = Moins qu'hier
-        celestial = Celeste
-        start_civil_twilight = Aube civile
-        rise = Lever
-        transit = Pic
-        set = Coucher
-        end_civil_twilight = Crépuscule civil
-        azimuth = Azimut
-        altitude = Altitude
-        right_ascension = Ascension droite
-        declination = Declinaison
-        equinox = Equinoxe
-        solstice = Solstice
-        total_daylight = Durée du jour
-        full_moon = Pleine lune
-        new_moon = Nouvelle lune
-        phase = Phase
-        full = pleine
-        install_pyephem = Installez pyephem pour davantages de détails.
+        close                       = Fermer
+        almanac_more_details        = Plus de détails
+        almanac_modal_title         = Information Almanach
+        sun_always_down             = Always down
+        sun_always_up               = Always up
+        more_than_yesterday         = Plus qu'hier
+        less_than_yesterday         = Moins qu'hier
+        celestial                   = Celeste
+        start_civil_twilight        = Aube civile
+        rise                        = Lever
+        transit                     = Pic
+        set                         = Coucher
+        end_civil_twilight          = Crépuscule civil
+        azimuth                     = Azimut
+        altitude                    = Altitude
+        right_ascension             = Ascension droite
+        declination                 = Declinaison
+        equinox                     = Equinoxe
+        solstice                    = Solstice
+        total_daylight              = Durée du jour
+        full_moon                   = Pleine lune
+        new_moon                    = Nouvelle lune
+        phase                       = Phase
+        full                        = pleine
+        install_pyephem             = Installez pyephem pour davantages de détails.
         
-  
         # Graphs Page Text and Titles
-        graphs_page_all_button = Tous
-        graphs_windrose_frequency = Frequence
-        graphs_windDir_ordinals = '{ 0: "N", 90: "E", 180: "S", 270: "O", 360: "N" }'
+        graphs_page_all_button      = Tous
+        graphs_windrose_frequency   = Frequence
+        graphs_windDir_ordinals     = '{ 0: "N", 90: "E", 180: "S", 270: "O", 360: "N" }'
         
         # Records Page Text and Titles
-        records_ending = Jusqu'au
-        records_days_text = jours
-        records_all_time = Tous les temps
-        records_temperature_records = Records de températures
-        records_high_temp = Température max
-        records_low_temp = Température min
-        records_high_apptemp = Température ressentie max
-        records_low_apptemp = Température ressentie min
-        records_high_heatindex = Indice de chaleur max
-        records_low_windchill = Indice de chaleur min
-        records_largest_temp_range = Delta de temperature max (jour)
-        records_smallest_temp_range = Delta de temperature min (jour)
-        records_wind_records = Records de vent
-        records_strongest_wind = Rafale la plus forte
-        records_daily_windrun = Course de vent maxi
-        records_rain_records = Records de précipitations
-        records_highest_daily_rainfall = Jour avec les plus fortes précipitations
-        records_highest_daily_rainrate = Jour avec le plus fort taux de précipitations
-        records_month_high_rainfall = Mois avec les plus forte précipitations
-        records_total_rainfall = Total Rainfall for
-        records_consec_days_with_rain = Nombre de jours de pluie consécutifs
-        records_consec_days_without_rain = Nombre de jours consécutifs sans pluie
-        records_humidity_records = Records d'humidité
-        records_high_humidity = Humidité max
-        records_lowest_humidity = Humidité min
-        records_highest_dewpoint = Point de rosée max
-        records_lowest_dewpoint = Point de rosée min
-        records_barometer_records = Records baromètre
-        records_high_barometer = Baromètre max
-        records_low_barometer = Baromètres min
-        records_sun_records = Records ensoleillement
-        records_high_solar_rad = Radiation solaires max
-        records_high_uv = Indice UV max
+        records_ending                      = Jusqu'au
+        records_days_text                   = jours
+        records_all_time                    = Tous les temps
+        records_temperature_records         = Records de températures
+        records_high_temp                   = Température max
+        records_low_temp                    = Température min
+        records_high_apptemp                = Température ressentie max
+        records_low_apptemp                 = Température ressentie min
+        records_high_heatindex              = Indice de chaleur max
+        records_low_windchill               = Indice de chaleur min
+        records_largest_temp_range          = Delta de temperature max (jour)
+        records_smallest_temp_range         = Delta de temperature min (jour)
+        records_wind_records                = Records de vent
+        records_strongest_wind              = Rafale la plus forte
+        records_daily_windrun               = Course de vent maxi
+        records_rain_records                = Records de précipitations
+        records_highest_daily_rainfall      = Jour avec les plus fortes précipitations
+        records_highest_daily_rainrate      = Jour avec le plus fort taux de précipitations
+        records_month_high_rainfall         = Mois avec les plus forte précipitations
+        records_total_rainfall              = Précipitations totales année
+        records_consec_days_with_rain       = Nombre de jours de pluie consécutifs
+        records_consec_days_without_rain    = Nombre de jours consécutifs sans pluie
+        records_humidity_records            = Records d'humidité
+        records_high_humidity               = Humidité max
+        records_lowest_humidity             = Humidité min
+        records_highest_dewpoint            = Point de rosée max
+        records_lowest_dewpoint             = Point de rosée min
+        records_barometer_records           = Records baromètre
+        records_high_barometer              = Baromètre max
+        records_low_barometer               = Baromètres min
+        records_sun_records                 = Records ensoleillement
+        records_high_solar_rad              = Radiation solaires max
+        records_high_uv                     = Indice UV max
        
         # NOAA Reports Page Text and Titles
-        reports_title = Rapports NOAA
-        reports_click_here_link = Cliquez ici
-        reports_view_more = pour visualiser ce rapport brut ou cliquez sur les mois/années pour changer de rapport.
+        reports_title               = Rapports NOAA
+        reports_click_here_link     = Cliquez ici
+        reports_view_more           = pour visualiser ce rapport brut ou cliquez sur les mois/années pour changer de rapport.
         
         # moment.js default labels formats
-        time_earthquake = "LLL"
-        time_lastUpdated = "LL, LTS"
-        time_snapshot_records_today_header = "dddd, LL"
-        time_snapshot_records_month_header = "MMMM YYYY"
-        time_sunrise = "LT"
-        time_sunset = "LT"
-        time_darksky_alert_expires = "LLL"
-        time_darksky_forecast_date = "ddd M/DD"
-        time_forecast_last_updated = "LLL"
-        time_mqtt_websockets_last_updated = "LL, LTS"
-        time_records_page_full_date = "LLL"
-        time_records_page_month_day_year = "LL"
-        time_records_page_rainfall_range_begin = "DD MMMM"
-        time_records_page_rainfall_range_end = "LL"
+        time_earthquake                         = "LLL"
+        time_lastUpdated                        = "LL, LTS"
+        time_snapshot_records_today_header      = "dddd, LL"
+        time_snapshot_records_month_header      = "MMMM YYYY"
+        time_sunrise                            = "LT"
+        time_sunset                             = "LT"
+        time_darksky_alert_expires              = "LLL"
+        time_darksky_forecast_date              = "ddd M/DD"
+        time_forecast_last_updated              = "LLL"
+        time_mqtt_websockets_last_updated       = "LL, LTS"
+        time_records_page_full_date             = "LLL"
+        time_records_page_month_day_year        = "LL"
+        time_records_page_rainfall_range_begin  = "DD MMMM"
+        time_records_page_rainfall_range_end    = "LL"
         
         
         
 ###############################################################################
+
 [Almanac]
     # The labels to be used for the phases of the moon:
     moon_phases = Nouvelle lune, Premier croissant, Premier Quartier, Gibbeuse croissante, Pleine lune, Gibbeuse décroissante, Dernier Quartier, Dernier croissant
+
 ###############################################################################
 [Units]
     # This section is for managing the selection and formatting of units.
     
     [[Groups]]
-        # For each group of measurements, this section sets what units to use for it. NB: 
-        # The unit is always in the singular. I.e., 'mile_per_hour', NOT 'miles_per_hour'
-        group_altitude = foot # Options are 'foot' or 'meter'
-        group_degree_day = degree_F_day # Options are 'degree_F_day' or 'degree_C_day'
-        group_direction = degree_compass
-        group_moisture = centibar
-        group_percent = percent
-        group_pressure = inHg # Options are 'inHg', 'mmHg', 'mbar', or 'hPa'
-        group_radiation = watt_per_meter_squared
-        group_rain = inch # Options are 'inch', 'cm', or 'mm'
-        group_rainrate = inch_per_hour # Options are 'inch_per_hour', 'cm_per_hour', or 'mm_per_hour'
-        group_speed = mile_per_hour # Options are 'mile_per_hour', 'km_per_hour', 'knot', or 'meter_per_second'
-        group_speed2 = mile_per_hour2 # Options are 'mile_per_hour2', 'km_per_hour2', 'knot2', or 'meter_per_second2'
-        group_temperature = degree_F # Options are 'degree_F' or 'degree_C'
-        group_uv = uv_index
-        group_volt = volt
+        # For each group of measurements, this section sets what units to
+        # use for it.
+        # NB: The unit is always in the singular. I.e., 'mile_per_hour',
+        # NOT 'miles_per_hour'
+
+        group_altitude     = foot                 # Options are 'foot' or 'meter'
+        group_degree_day   = degree_F_day         # Options are 'degree_F_day' or 'degree_C_day'
+        group_direction    = degree_compass
+        group_moisture     = centibar
+        group_percent      = percent
+        group_pressure     = inHg                 # Options are 'inHg', 'mmHg', 'mbar', or 'hPa'
+        group_radiation    = watt_per_meter_squared
+        group_rain         = inch                 # Options are 'inch', 'cm', or 'mm'
+        group_rainrate     = inch_per_hour        # Options are 'inch_per_hour', 'cm_per_hour', or 'mm_per_hour'
+        group_speed        = mile_per_hour        # Options are 'mile_per_hour', 'km_per_hour', 'knot', or 'meter_per_second'
+        group_speed2       = mile_per_hour2       # Options are 'mile_per_hour2', 'km_per_hour2', 'knot2', or 'meter_per_second2'
+        group_temperature  = degree_F             # Options are 'degree_F' or 'degree_C'
+        group_uv           = uv_index
+        group_volt         = volt
+
         # The following are used internally and should not be changed:
-        group_count = count
-        group_interval = minute
-        group_time = unix_epoch
-        group_elapsed = second
+        group_count        = count
+        group_interval     = minute
+        group_time         = unix_epoch
+        group_elapsed      = second
+
     [[StringFormats]]
         # This section sets the string formatting for each type of unit.
-        centibar = %.0f
-        cm = %.2f
-        cm_per_hour = %.2f
-        degree_C = %.1f
-        degree_F = %.1f
-        degree_compass = %.0f
-        foot = %.0f
-        hPa = %.1f
-        hour = %.1f
-        inHg = %.3f
-        inch = %.2f
-        inch_per_hour = %.2f
-        km_per_hour = %.0f
-        km_per_hour2 = %.1f
-        knot = %.0f
-        knot2 = %.1f
-        mbar = %.1f
-        meter = %.0f
-        meter_per_second = %.1f
-        meter_per_second2 = %.1f
-        mile_per_hour = %.0f
-        mile_per_hour2 = %.1f
-        mm = %.1f
-        mmHg = %.1f
-        mm_per_hour = %.1f
-        percent = %.0f
-        second = %.0f
-        uv_index = %.1f
-        volt = %.1f
+
+        centibar           = %.0f
+        cm                 = %.2f
+        cm_per_hour        = %.2f
+        degree_C           = %.1f
+        degree_F           = %.1f
+        degree_compass     = %.0f
+        foot               = %.0f
+        hPa                = %.1f
+        hour               = %.1f
+        inHg               = %.3f
+        inch               = %.2f
+        inch_per_hour      = %.2f
+        km_per_hour        = %.0f
+        km_per_hour2       = %.1f
+        knot               = %.0f
+        knot2              = %.1f
+        mbar               = %.1f
+        meter              = %.0f
+        meter_per_second   = %.1f
+        meter_per_second2  = %.1f
+        mile_per_hour      = %.0f
+        mile_per_hour2     = %.1f
+        mm                 = %.1f
+        mmHg               = %.1f
+        mm_per_hour        = %.1f
+        percent            = %.0f
+        second             = %.0f
+        uv_index           = %.1f
+        volt               = %.1f
         watt_per_meter_squared = %.0f
-        NONE = "N/A"
+        NONE               = "N/A"
+
     [[Labels]]
         # This section sets a label to be used for each type of unit.
-        centibar = " cb"
-        cm = " cm"
-        cm_per_hour = " cm/hr"
-        degree_C = " °C"
-        degree_F = " °F"
-        degree_compass = °
-        foot = " feet"
-        hPa = " hPa"
-        inHg = " inHg"
-        inch = " in"
-        inch_per_hour = " in/hr"
-        km_per_hour = " km/h"
-        km_per_hour2 = " km/h"
-        knot = " knots"
-        knot2 = " knots"
-        mbar = " mbar"
-        meter = " mètres"
-        meter_per_second = " m/s"
+
+        centibar          = " cb"
+        cm                = " cm"
+        cm_per_hour       = " cm/hr"
+        degree_C          =  " °C"
+        degree_F          =  " °F"
+        degree_compass    =   °
+        foot              = " pieds"
+        hPa               = " hPa"
+        inHg              = " inHg"
+        inch              = " in"
+        inch_per_hour     = " in/hr"
+        km_per_hour       = " km/h"
+        km_per_hour2      = " km/h"
+        knot              = " noeuds"
+        knot2             = " noeuds"
+        mbar              = " mbar"
+        meter             = " meters"
+        meter_per_second  = " m/s"
         meter_per_second2 = " m/s"
-        mile_per_hour = " mph"
-        mile_per_hour2 = " mph"
-        mm = " mm"
-        mmHg = " mmHg"
-        mm_per_hour = " mm/hr"
-        percent = %
-        volt = " V"
+        mile_per_hour     = " mph"
+        mile_per_hour2    = " mph"
+        mm                = " mm"
+        mmHg              = " mmHg"
+        mm_per_hour       = " mm/hr"
+        percent           =   %
+        volt              = " V"
         watt_per_meter_squared = " W/m²"
-        day = " jour", " jours"
-        hour = " heure", " heures"
-        minute = " minute", " minutes"
-        second = " seconde", " secondes"
-        NONE = ""
-   
-     
+        day               = " jour",    " jours"
+        hour              = " heure",   " heures"
+        minute            = " minute", " minutes"
+        second            = " seconde", " secondes"
+        NONE              = ""
+        
     [[TimeFormats]]
-        # This section sets the string format to be used for each time scale. The values 
-        # below will work in every locale, but may not look particularly attractive. See 
-        # the Customization Guide for alternatives.
-        day = %X
-        week = %X (%A)
-        month = %x %X
-        year = %x %X
-        rainyear = %x %X
-        current = %x %X
-        ephem_day = %X
+        # This section sets the string format to be used for each time scale.
+        # The values below will work in every locale, but may not look
+        # particularly attractive. See the Customization Guide for alternatives.
+
+        day        = %X
+        week       = %X (%A)
+        month      = %x %X
+        year       = %x %X
+        rainyear   = %x %X
+        current    = %x %X
+        ephem_day  = %X
         ephem_year = %x %X
         
-    [[Ordinates]]
+    [[Ordinates]]    
         # The ordinal directions. The last one should be for no wind direction
-        directions = N, NNE, NE, ENE, E, ESE, SE, SSE, S, SSW, SW, WSW, W, WNW, NW, NNW, N/A
+        directions = N, NNE, NE, ENE, E, ESE, SE, SSE, S, SSW, SW, WSW, W, WNW, NW, NNW, N/A 
+
     [[DegreeDays]]
-        # This section sets the base temperatures used for the calculation of heating and 
-        # cooling degree-days.
+        # This section sets the base temperatures used for the calculation
+        # of heating and cooling degree-days.
                 
         # Base temperature for heating days, with unit:
         heating_base = 65, degree_F
         # Base temperature for cooling days, with unit:
         cooling_base = 65, degree_F
+
     [[Trend]]
-        time_delta = 10800 # 3 hours
-        time_grace = 300 # 5 minutes
+        time_delta = 10800  # 3 hours
+        time_grace = 300    # 5 minutes 
         
 ###############################################################################
+
 [CheetahGenerator]
-    # This section is used by the generator CheetahGenerator, and specifies which files 
-    # are to be generated from which template.
+    # This section is used by the generator CheetahGenerator, and specifies
+    # which files are to be generated from which template.
     
     search_list_extensions = user.belchertown.getData
+
     # Possible encodings are 'html_entities', 'utf8', or 'strict_ascii'
     encoding = utf8
+
     [[SummaryByMonth]]
         # Reports that summarize "by month"
         [[[NOAA_month]]]
             encoding = strict_ascii
             template = NOAA/NOAA-YYYY-MM.txt.tmpl
+
     [[SummaryByYear]]
         # Reports that summarize "by year"
         [[[NOAA_year]]]
             encoding = strict_ascii
             template = NOAA/NOAA-YYYY.txt.tmpl
-   
+        
     [[ToDate]]
-        # Reports that show statistics "to date", such as day-to-date, week-to-date, 
-        # month-to-date, etc.
+        # Reports that show statistics "to date", such as day-to-date,
+        # week-to-date, month-to-date, etc.
         [[[weewx_data]]]
             template = json/weewx_data.json.tmpl
             
@@ -435,18 +456,24 @@
             template = manifest.json.tmpl
             
 ###############################################################################
+
 [CopyGenerator]
     
-    # This section is used by the generator CopyGenerator List of files to be copied only 
-    # the first time the generator runs
+    # This section is used by the generator CopyGenerator
+
+    # List of files to be copied only the first time the generator runs
     copy_once = favicon.ico, images/*, json/index.html, js/index.html, js/responsive-menu.js, robots.txt, *.css
     
     # List of files to be copied each time the generator runs
     copy_always =
         
+
 ###############################################################################
+
 #
 # The list of generators that are to be run:
 #
 [Generators]
     generator_list = weewx.cheetahgenerator.CheetahGenerator, weewx.reportengine.CopyGenerator, user.belchertown.JsonGenerator
+
+
