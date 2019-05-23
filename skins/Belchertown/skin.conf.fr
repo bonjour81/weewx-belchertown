@@ -11,15 +11,15 @@
     belchertown_locale = "auto"
     theme = light
     theme_toggle_enabled = 1
-    site_title = "Météo Saint-Sulpice"
-    logo_image = "http://www.meteosaintsulpice.fr/logo330x80.png"
+    site_title = ""
+    logo_image = ""
     radar_html = ""
     # Station Observations. Special observation rainWithRainRate combines Daily Rain with 
     # Rain Rate in 1 line
     station_observations = "barometer", "dewpoint", "outHumidity", "rainWithRainRate", "UV"
     
     # Manifest Settings for Mobile Phones
-    manifest_name = "Météo Saint-Sulpice"
+    manifest_name = ""
     manifest_short_name = "Météo"
     # Highcharts settings
     highcharts_enabled = 1
@@ -48,7 +48,7 @@
     reload_hook_images = 0
     
     # Forecast defaults
-    forecast_enabled = 1
+    forecast_enabled = 0
     darksky_secret_key = ""
     darksky_units = "ca"
     darksky_lang = "fr"
@@ -62,7 +62,7 @@
 
     # Social Share Button Defaults. Define the text below under Labels
     facebook_enabled = 0
-    twitter_enabled = 1
+    twitter_enabled = 0
 
     # Google Analytics googleAnalyticsId = UA-12345678-1 This is the display of the Pi 
     # Kiosk which is in the /pi folder
@@ -86,12 +86,12 @@
         html_description = ""
         
         # Footer Information
-        footer_copyright_text = "<a href="https://github.com/bonjour81" target="_blank">Bonjour81</a>"
+        footer_copyright_text = "mon site météo"
         footer_disclaimer_text = "N'utilisez pas ce site web pour prendre des décisions importantes"
         
         # Twitter Social Share        
         twitter_text = ""
-        twitter_owner = bbonjour81
+        twitter_owner = ""
         twitter_hashtags = ""
         
         # Station Observation Table
@@ -177,7 +177,7 @@
         celestial = Celeste
         start_civil_twilight = Aube civile
         rise = Lever
-        transit = Midi solaire
+        transit = Pic
         set = Coucher
         end_civil_twilight = Crépuscule civil
         azimuth = Azimut
